@@ -13,10 +13,10 @@ void main(){
 	vec2 z;
     vec2 c=position+((st*4.)-2.)*radius;
     int ind;
-    const int mx=300;
+    const int mx=400;
     for(int i=0;i<mx;i++){
         ind=i;
-        if(z.x*z.x+z.y*z.y>=4.)break;
+        if(z.x*z.x+z.y*z.y>=400.)break;
         float t=z.x*z.x-z.y*z.y+c.x;
         z.y=2.*z.x*z.y+c.y;z.x=t;
         //float t=c.x*exp(z.x)*cos(z.y)-c.y*exp(z.x)*sin(z.y);
@@ -24,8 +24,9 @@ void main(){
     }
     float zmag=sqrt(z.x*z.x+z.y*z.y);
     float lvl=( float(ind) + 1. - log(log(abs(zmag)) / log(30.)));
+	float grad=log(float(ind))/log(zmag);
     vec3 color = ind>mx-10?
-        	vec3(st.x,st.y,abs(sin(time))):
+			mix(mix(vec3(1,0,0), vec3(0,1,0), fract(grad)),vec3(0,0,1),fract((grad/2))):
     		abs(vec3(sin(.2*lvl),
 					 sin(.3*lvl),
 					 sin(.4*lvl)));

@@ -24,8 +24,9 @@ void main(){
     }
     float zmag=sqrt(z.x*z.x+z.y*z.y);
     float lvl=( float(ind) + 1. - log(log(abs(zmag)) / log(30.)));
+	float grad=log(float(ind))/log(zmag);
     vec3 color = ind>mx-10?
-        	vec3(st.x,st.y,abs(sin(time))):
+			mix(mix(vec3(1,0,0), vec3(0,1,0), fract(grad)),vec3(0,0,1),fract((grad/2))):
     		abs(vec3(cos(.4*lvl),
 					 cos(.3*lvl),
 					 cos(.6*lvl)));
