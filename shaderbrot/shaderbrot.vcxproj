@@ -424,6 +424,8 @@
     <None Include="include\glm\gtx\vector_angle.inl" />
     <None Include="include\glm\gtx\vector_query.inl" />
     <None Include="include\glm\gtx\wrap.inl" />
+    <None Include="julia.frag" />
+    <None Include="julia.vert" />
     <None Include="mandelbrot.frag" />
     <None Include="mandelbrot.vert" />
   </ItemGroup>
