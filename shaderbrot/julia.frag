@@ -6,7 +6,7 @@ in vec3 fragcoord;
 uniform float time;
 uniform vec2 relative;
 uniform vec2 position;
-uniform float radius;
+uniform float radius=.5;
 
 void main(){
     vec2 st = fragcoord.xy+.5;
