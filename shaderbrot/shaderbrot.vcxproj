@@ -425,9 +425,8 @@
     <None Include="include\glm\gtx\vector_query.inl" />
     <None Include="include\glm\gtx\wrap.inl" />
     <None Include="julia.frag" />
-    <None Include="julia.vert" />
     <None Include="mandelbrot.frag" />
-    <None Include="mandelbrot.vert" />
+    <None Include="vertex.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

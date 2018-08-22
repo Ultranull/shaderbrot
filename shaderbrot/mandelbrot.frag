@@ -19,14 +19,15 @@ void main(){
         if(z.x*z.x+z.y*z.y>=4.)break;
         float t=z.x*z.x-z.y*z.y+c.x;
         z.y=2.*z.x*z.y+c.y;z.x=t;
+        //float t=c.x*exp(z.x)*cos(z.y)-c.y*exp(z.x)*sin(z.y);
+        //z.y    =c.x*exp(z.x)*sin(z.y)-c.y*exp(z.x)*cos(z.y);z.x=t;
     }
-    float zmag=z.x*z.x+z.y*z.y;
-    float lvl=log(float(ind))/log(zmag);
+    float zmag=sqrt(z.x*z.x+z.y*z.y);
+    float lvl=( float(ind) + 1. - log(log(abs(zmag)) / log(30.)));
     vec3 color = ind>mx-10?
         	vec3(st.x,st.y,abs(sin(time))):
-    		vec3(cos(lvl+.2)*2.,
-                 1.-cos(lvl+.3),
-                 1.-cos(lvl+.6));
-
+    		abs(vec3(sin(.2*lvl),
+					 sin(.3*lvl),
+					 sin(.4*lvl)));
     gl_FragColor = vec4(color,1.0);
 }

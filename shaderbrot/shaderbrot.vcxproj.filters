@@ -830,8 +830,7 @@
       <Filter>Header Files</Filter>
     </None>
     <None Include="mandelbrot.frag" />
-    <None Include="mandelbrot.vert" />
-    <None Include="julia.vert" />
     <None Include="julia.frag" />
+    <None Include="vertex.vert" />
   </ItemGroup>
 </Project>
